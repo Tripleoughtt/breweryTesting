@@ -17,7 +17,10 @@ router.post('/submitReview', function(req, res){
   var userInfo = jwt.decode(req.cookies.token, process.env.JWT_SECRET)
   console.log(userInfo)
   User.findByIdAndUpdate(userInfo._id, {$push: {reviews: req.body}}, function(err, saveduser){
-
+    console.log(err || saveduser)
+    User.findById(userInfo._id, function(err, updatedUser){
+      res.send(updatedUser)
+    })
   })
 })
 

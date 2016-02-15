@@ -12,7 +12,7 @@ app.controller('brewCtrl', function($scope, $state,BrewService) {
       (err) => console.log('BrewSnag unsuccessful', err))
     }
     $scope.submitBrewReview = (brewReview) => {
-      BrewService.submitBrewReview(brewReview).then((res) => console.log('success'), err => console.log('unsuccessful'))
+      BrewService.submitBrewReview(brewReview).then((res) => console.log('success', res.data), err => console.log('unsuccessful'))
     }
 
 

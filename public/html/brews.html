@@ -2,12 +2,13 @@
   <h1>Welcome To The Brew Page</h1>
   <button ng-click="getRandomBrew()">Get Random Beer!</button>
   <div ng-if="brewData">
-    <h1>{{brewData.name}}</h1>
-    <h1>{{brewData.abv}}</h1>
+    <h1>Brew Name: {{brewData.name}}</h1>
+    <h1>Percent By Volume: {{brewData.abv}}</h1>
     <img src="{{brewData.labels.medium}}" alt="">
     <h1>Review This Brew?</h1>
     <textarea ng-model="brewReview.text" cols="30" rows="10"></textarea>
     <input type="number" ng-model="brewReview.rating">
+    <button ng-click="submitBrewReview(brewReview)">Submit Review</button>
   </div>
 
 </div>
